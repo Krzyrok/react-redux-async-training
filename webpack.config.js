@@ -1,6 +1,9 @@
+var webpack = require("webpack");
+
 var config = {
     entry: [
-        // "webpack-dev-server/client?http://0.0.0.0:3000",
+        "webpack-dev-server/client?http://localhost:3000",
+        "webpack/hot/only-dev-server",
         "./src/entry.jsx"
     ],
     output: {
@@ -8,18 +11,18 @@ var config = {
         filename: "build/bundle.js"
     },
     module: {
-        loaders: [
-            { loader: "style!css", test: /\.css$/ },
-            {
-                loader: "babel-loader",
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                query: {
-                    presets: ["es2015", "react"]
-                }
-            }
-        ]
-    }
+        loaders: [{
+            loader: "style!css",
+            test: /\.css$/
+        }, {
+            loaders: ["react-hot", "babel-loader"],
+            test: /\.jsx?$/,
+            exclude: /node_modules/
+        }]
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ]
 };
 
 module.exports = config;
