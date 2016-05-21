@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import Component1 from "./component1.jsx";
 import Component2 from "./component2.jsx";
 
-class App extends React.Component {
+class App extends Component {
     render () {
         return (
             <div>
