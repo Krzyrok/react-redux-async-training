@@ -12,7 +12,10 @@ var config = {
             "babel-polyfill",
             "isomorphic-fetch",
             "react",
-            "react-dom"
+            "react-dom",
+            "redux",
+            "redux-thunk",
+            "redux-logger"
         ]
     },
     output: {
