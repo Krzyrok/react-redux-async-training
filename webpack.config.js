@@ -1,12 +1,23 @@
 var config = {
-    entry: "./src/entry.js",
+    entry: [
+        // "webpack-dev-server/client?http://0.0.0.0:3000",
+        "./src/entry.jsx"
+    ],
     output: {
         path: __dirname,
         filename: "build/bundle.js"
     },
     module: {
         loaders: [
-            { test: /\.css$/, loader: "style!css" }
+            { loader: "style!css", test: /\.css$/ },
+            {
+                loader: "babel-loader",
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                query: {
+                    presets: ["es2015", "react"]
+                }
+            }
         ]
     }
 };
