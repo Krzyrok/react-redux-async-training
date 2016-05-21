@@ -12,4 +12,4 @@ Used: <br />
 2) Webpack (extracted "libs/vendor" chunk in configuration) with webpack-dev-server and react-hot-loader from gaearon <br />
 3) Babel with ES6 and react presets and babel-polyfill <br />
 4) React <br />
-5) Redux with react-redux and middleware (redux-thunk)
+5) Redux with react-redux and middlewares (redux-thunk, redux-logger) <br />
