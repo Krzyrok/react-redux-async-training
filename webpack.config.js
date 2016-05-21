@@ -2,14 +2,21 @@ var webpack = require("webpack");
 
 var config = {
     devtool: "eval", // "source-map" if debug, "eval" if speed up
-    entry: [
-        "webpack-dev-server/client?http://localhost:3000",
-        "webpack/hot/only-dev-server",
-        "./src/entry.jsx"
-    ],
+    entry: {
+        app: [
+            "webpack-dev-server/client?http://localhost:3000",
+            "webpack/hot/only-dev-server",
+            "./src/entry.jsx"
+        ],
+        libs: [
+            "babel-polyfill",
+            "react",
+            "react-dom"
+        ]
+    },
     output: {
         path: __dirname,
-        filename: "build/bundle.js"
+        filename: "build/[name].bundle.js"
     },
     module: {
         loaders: [{
@@ -22,7 +29,13 @@ var config = {
         }]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ["libs"],
+            minChunks: Infinity
+            // (with more entries, this ensures that no other module
+            //  goes into the libs chunk)
+        })
     ]
 };
 
