@@ -6,10 +6,11 @@ var config = {
         app: [
             "webpack-dev-server/client?http://localhost:3000",
             "webpack/hot/only-dev-server",
-            "./src/entry.jsx"
+            "./src/index.jsx"
         ],
         libs: [
             "babel-polyfill",
+            "isomorphic-fetch",
             "react",
             "react-dom"
         ]
