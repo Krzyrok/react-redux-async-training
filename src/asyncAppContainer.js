@@ -7,10 +7,7 @@ function mapStateToProps(state) {
         isFetching,
         lastUpdated,
         items: posts
-    } = postsBySubreddit[selectedSubreddit] || {
-        isFetching: false,
-        items: []
-    };
+    } = postsBySubreddit[selectedSubreddit] || { items: [] };
 
     return {
         isFetching,
