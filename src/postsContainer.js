@@ -1,16 +1,17 @@
 import { connect } from "react-redux";
-import AsyncApp from "./asyncApp.jsx";
+import Posts from "./posts.jsx";
 
 function mapStateToProps(state) {
     const { selectedSubreddit, postsBySubreddit } = state;
     const {
-        lastUpdated
+        isFetching,
+        items: posts
     } = postsBySubreddit[selectedSubreddit] || {};
 
     return {
-        lastUpdated,
-        selectedSubreddit
+        isFetching,
+        posts
     };
 }
 
-export default connect(mapStateToProps)(AsyncApp);
+export default connect(mapStateToProps)(Posts);

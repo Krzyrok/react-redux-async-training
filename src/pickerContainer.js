@@ -5,7 +5,7 @@ import { selectSubreddit } from "./actions.js";
 function mapStateToProps(state) {
     return {
         value: state.selectedSubreddit,
-        options: ["reactjs", "frontend"]
+        options: ["reactjs", "frontend", "keke"]
     };
 }
 

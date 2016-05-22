@@ -3,13 +3,9 @@ import { fetchPostsIfNeeded } from "./actions.js";
 import PickerContainer from "./pickerContainer.js";
 import LastUpdateInfoContainer from "./lastUpdateInfoContainer.js";
 import RefreshSubredditContainer from "./refreshSubredditContainer.js";
-import Posts from "./posts.jsx";
+import PostsContainer from "./postsContainer.js";
 
 class AsyncApp extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         const { dispatch, selectedSubreddit } = this.props;
         dispatch(fetchPostsIfNeeded(selectedSubreddit));
@@ -23,28 +19,12 @@ class AsyncApp extends Component {
     }
 
     render() {
-        const { posts, isFetching } = this.props;
-
         return (
             <div>
                 <PickerContainer />
                 <LastUpdateInfoContainer />
                 <RefreshSubredditContainer />
-                <div>
-                    {isFetching && posts.length === 0 &&
-                        <h2>LOADING...</h2>
-                    }
-                    {!isFetching && posts.length === 0 &&
-                        <div>No data</div>
-                    }
-                    {posts.length > 0 &&
-                        <div
-                            style={{opacity: isFetching ? 0.5 : 1}}
-                        >
-                            <Posts posts={posts} />
-                        </div>
-                    }
-                </div>
+                <PostsContainer />
             </div>
         );
     }
@@ -52,9 +32,6 @@ class AsyncApp extends Component {
 
 AsyncApp.propTypes = {
     selectedSubreddit: PropTypes.string.isRequired,
-    posts: PropTypes.array,
-    isFetching: PropTypes.bool,
-    lastUpdated: PropTypes.number,
     dispatch: PropTypes.func.isRequired
 };
 
