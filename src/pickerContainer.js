@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Picker from "./picker.jsx";
+import Picker from "./picker.js";
 import { selectSubreddit } from "./actions.js";
 
 function mapStateToProps(state) {

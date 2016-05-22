@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import AsyncApp from "./asyncApp.jsx";
+import AsyncApp from "./asyncApp.js";
 
 function mapStateToProps(state) {
     return {

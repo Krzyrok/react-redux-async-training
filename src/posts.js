@@ -1,5 +1,5 @@
 import React, { PropTypes } from "react";
-import Post from "./post.jsx";
+import Post from "./post.js";
 
 const Posts = ({ posts, isFetching }) => {
     const postsIsEmpty = !posts || posts.length === 0;

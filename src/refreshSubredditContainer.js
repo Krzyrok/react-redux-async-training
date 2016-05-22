@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import RefreshSubreddit from "./refreshSubreddit.jsx";
+import RefreshSubreddit from "./refreshSubreddit.js";
 import { invalidateSubreddit, fetchPostsIfNeeded} from "./actions.js";
 
 function mapStateToProps(state) {
