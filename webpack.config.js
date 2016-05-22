@@ -1,7 +1,7 @@
 var webpack = require("webpack");
 
 var config = {
-    devtool: "source-map", // "source-map" if debug, "eval" if speed up
+    devtool: "eval", // "source-map" if debug, "eval" if speed up
     entry: {
         app: [
             "webpack-dev-server/client?http://localhost:3000",
