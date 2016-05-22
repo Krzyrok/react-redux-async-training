@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react";
 
 const Picker = ({ value, onChange, options }) => (
-    <span>
+    <div>
         <h1>{value}</h1>
         <select
             onChange={e => onChange(e.target.value)}
@@ -16,7 +16,7 @@ const Picker = ({ value, onChange, options }) => (
                 </option>
             )}
         </select>
-    </span>
+    </div>
 );
 
 Picker.propTypes = {

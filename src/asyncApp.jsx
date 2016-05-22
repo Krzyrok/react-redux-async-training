@@ -1,13 +1,13 @@
 import React, { Component, PropTypes } from "react";
-import { fetchPostsIfNeeded, invalidateSubreddit } from "./actions.js";
+import { fetchPostsIfNeeded } from "./actions.js";
 import PickerContainer from "./pickerContainer.js";
 import LastUpdateInfoContainer from "./lastUpdateInfoContainer.js";
+import RefreshSubredditContainer from "./refreshSubredditContainer.js";
 import Posts from "./posts.jsx";
 
 class AsyncApp extends Component {
     constructor(props) {
         super(props);
-        this.handleRefreshClick = this.handleRefreshClick.bind(this);
     }
 
     componentDidMount() {
@@ -22,14 +22,6 @@ class AsyncApp extends Component {
         }
     }
 
-    handleRefreshClick(e) {
-        e.preventDefault();
-
-        const { selectedSubreddit, dispatch } = this.props;
-        dispatch(invalidateSubreddit(selectedSubreddit));
-        dispatch(fetchPostsIfNeeded(selectedSubreddit));
-    }
-
     render() {
         const { posts, isFetching } = this.props;
 
@@ -37,12 +29,8 @@ class AsyncApp extends Component {
             <div>
                 <PickerContainer />
                 <LastUpdateInfoContainer />
+                <RefreshSubredditContainer />
                 <div>
-                    {!isFetching &&
-                        <a href="#" onClick={this.handleRefreshClick}>
-                            Refresh
-                        </a>
-                    }
                     {isFetching && posts.length === 0 &&
                         <h2>LOADING...</h2>
                     }
