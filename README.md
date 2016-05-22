@@ -13,3 +13,9 @@ Used: <br />
 3) Babel with ES6 and react presets and babel-polyfill <br />
 4) React <br />
 5) Redux with react-redux and middlewares (redux-thunk, redux-logger) <br />
+<br />
+
+For debugging:
+1) change devtool property in webpack.config.js (from 'eval' to the e.g. 'source-map') <br />
+2) install Redux DevTools (e.g. as Chrome extension: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd ) <br />
+
