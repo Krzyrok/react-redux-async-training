@@ -1,12 +1,11 @@
 import React, { Component, PropTypes } from "react";
-import { selectSubreddit, fetchPostsIfNeeded, invalidateSubreddit } from "./actions.js";
-import Picker from "./picker.jsx";
+import { fetchPostsIfNeeded, invalidateSubreddit } from "./actions.js";
+import PickerContainer from "./pickerContainer.jsx";
 import Posts from "./posts.jsx";
 
 class AsyncApp extends Component {
     constructor(props) {
         super(props);
-        this.handleSubredditChange = this.handleSubredditChange.bind(this);
         this.handleRefreshClick = this.handleRefreshClick.bind(this);
     }
 
@@ -22,10 +21,6 @@ class AsyncApp extends Component {
         }
     }
 
-    handleSubredditChange(nextSubreddit) {
-        this.props.dispatch(selectSubreddit(nextSubreddit));
-    }
-
     handleRefreshClick(e) {
         e.preventDefault();
 
@@ -35,15 +30,11 @@ class AsyncApp extends Component {
     }
 
     render() {
-        const { selectedSubreddit, posts, isFetching, lastUpdated } = this.props;
+        const { posts, isFetching, lastUpdated } = this.props;
 
         return (
             <div>
-                <Picker
-                    value={selectedSubreddit}
-                    onChange={this.handleSubredditChange}
-                    options={[ "reactjs", "frontend" ]}
-                />
+                <PickerContainer />
                 <div>
                     {lastUpdated &&
                         <span>
