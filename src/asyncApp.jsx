@@ -59,7 +59,7 @@ class AsyncApp extends Component {
                     {isFetching && posts.length === 0 &&
                         <h2>LOADING...</h2>
                     }
-                    {posts.length === 0 &&
+                    {!isFetching && posts.length === 0 &&
                         <div>No data</div>
                     }
                     {posts.length > 0 &&
