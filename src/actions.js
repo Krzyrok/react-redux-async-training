@@ -16,7 +16,7 @@ export function invalidateSubreddit(subreddit) {
     return {
         type: INVALIDATE_SUBREDDIT,
         subreddit
-    }
+    };
 }
 
 function requestPosts(subreddit) {
