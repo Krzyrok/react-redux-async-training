@@ -1,9 +1,10 @@
 import React, { PropTypes } from "react";
+import Post from "./post.jsx";
 
-const Posts = ({posts}) => (
+const Posts = ({ posts }) => (
     <ul>
         {posts.map((post, index) =>
-            <li key={index}>{post.title}</li>
+            <Post key={index} post={post} />
         )}
     </ul>
 );
