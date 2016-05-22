@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from "react";
 import { fetchPostsIfNeeded, invalidateSubreddit } from "./actions.js";
-import PickerContainer from "./pickerContainer.jsx";
+import PickerContainer from "./pickerContainer.js";
+import LastUpdateInfoContainer from "./lastUpdateInfoContainer.js";
 import Posts from "./posts.jsx";
 
 class AsyncApp extends Component {
@@ -30,18 +31,13 @@ class AsyncApp extends Component {
     }
 
     render() {
-        const { posts, isFetching, lastUpdated } = this.props;
+        const { posts, isFetching } = this.props;
 
         return (
             <div>
                 <PickerContainer />
+                <LastUpdateInfoContainer />
                 <div>
-                    {lastUpdated &&
-                        <span>
-                            Last updated at: {new Date(lastUpdated).toLocaleTimeString()}
-                            {" "}
-                        </span>
-                    }
                     {!isFetching &&
                         <a href="#" onClick={this.handleRefreshClick}>
                             Refresh
