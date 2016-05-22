@@ -17,5 +17,6 @@ Used: <br />
 
 For debugging: <br />
 1) change devtool property in webpack.config.js (from 'eval' to the e.g. 'source-map') <br />
-2) install Redux DevTools (e.g. as Chrome extension: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd ) <br />
+2) open browser devtools console - all actions are logged thank to redux-logger (configureStore.js) <br />
+3) install Redux DevTools (e.g. as Chrome extension: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd ) <br />
 
