@@ -19,6 +19,14 @@ export function invalidateSubreddit(subreddit) {
     };
 }
 
+export function fetchPostsIfNeeded(subreddit) {
+    return (dispatch, getState) => {
+        if (shouldFetchPosts(getState(), subreddit)) {
+            dispatch(fetchPosts(subreddit));
+        }
+    };
+}
+
 function requestPosts(subreddit) {
     return {
         type: REQUEST_POSTS,
@@ -53,12 +61,4 @@ function shouldFetchPosts(state, subreddit) {
     } else {
         return posts.didInvalidate;
     }
-}
-
-export function fetchPostsIfNeeded(subreddit) {
-    return (dispatch, getState) => {
-        if (shouldFetchPosts(getState(), subreddit)) {
-            dispatch(fetchPosts(subreddit));
-        }
-    };
 }
