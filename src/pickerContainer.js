@@ -11,8 +11,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        onChange: nextSubreddit => {
-            dispatch(selectSubreddit(nextSubreddit));
+        onChange: selectedSubreddit => {
+            dispatch(selectSubreddit(selectedSubreddit));
         }
     };
 }
