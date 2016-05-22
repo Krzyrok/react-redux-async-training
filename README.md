@@ -15,7 +15,7 @@ Used: <br />
 5) Redux with react-redux and middlewares (redux-thunk, redux-logger) <br />
 <br />
 
-For debugging:
+For debugging: <br />
 1) change devtool property in webpack.config.js (from 'eval' to the e.g. 'source-map') <br />
 2) install Redux DevTools (e.g. as Chrome extension: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd ) <br />
 
