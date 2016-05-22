@@ -1,6 +1,6 @@
 import React, { PropTypes } from "react";
 
-const Picker = (value, onChange, options) => (
+const Picker = ({value, onChange, options}) => (
     <span>
         <h1>{value}</h1>
         <select
@@ -21,8 +21,8 @@ const Picker = (value, onChange, options) => (
 
 Picker.propTypes = {
     value: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
-    options: PropTypes.string.arrayOf(
+    onChange: PropTypes.func.isRequired,
+    options: PropTypes.arrayOf(
         PropTypes.string.isRequired
     ).isRequired
 };

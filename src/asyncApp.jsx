@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from "react";
-import { connect } from "react-redux";
-import { selectSubreddit, fetchPostsIfNeeded, invalidateSubreddit } from "module";
+import { selectSubreddit, fetchPostsIfNeeded, invalidateSubreddit } from "./actions.js";
 import Picker from "./picker.jsx";
 import Posts from "./posts.jsx";
 
@@ -43,9 +42,9 @@ class AsyncApp extends Component {
                 <Picker
                     value={selectedSubreddit}
                     onChange={this.handleSubredditChange}
-                    options={["reactjs", "frontend"]}
+                    options={[ "reactjs", "frontend" ]}
                 />
-                <p>
+                <div>
                     {lastUpdated &&
                         <span>
                             Last updated at: {new Date(lastUpdated).toLocaleTimeString()}
@@ -70,7 +69,7 @@ class AsyncApp extends Component {
                             <Posts posts={posts} />
                         </div>
                     }
-                </p>
+                </div>
             </div>
         );
     }

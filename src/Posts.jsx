@@ -1,6 +1,6 @@
 import React, { PropTypes } from "react";
 
-const Posts = (posts) => (
+const Posts = ({posts}) => (
     <ul>
         {posts.map((post, index) =>
             <li key={index}>{post.title}</li>
@@ -9,7 +9,7 @@ const Posts = (posts) => (
 );
 
 Posts.propTypes = {
-    posts: PropTypes.arrayOf.isRequired
+    posts: PropTypes.array.isRequired
 };
 
 export default Posts;

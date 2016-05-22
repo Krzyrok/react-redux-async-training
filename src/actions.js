@@ -12,6 +12,13 @@ export function selectSubreddit(subreddit) {
     };
 }
 
+export function invalidateSubreddit(subreddit) {
+    return {
+        type: INVALIDATE_SUBREDDIT,
+        subreddit
+    }
+}
+
 function requestPosts(subreddit) {
     return {
         type: REQUEST_POSTS,
@@ -38,7 +45,7 @@ function fetchPosts(subreddit) {
 }
 
 function shouldFetchPosts(state, subreddit) {
-    const posts = state.postBySubreddit[subreddit];
+    const posts = state.postsBySubreddit[subreddit];
     if (!posts) {
         return true;
     } else if (posts.isFetching) {
