@@ -9,7 +9,6 @@ var config = {
             "./src/index.js"
         ],
         libs: [
-            "babel-polyfill",
             "isomorphic-fetch",
             "react",
             "react-dom",
@@ -24,9 +23,6 @@ var config = {
     },
     module: {
         loaders: [{
-            loader: "style!css",
-            test: /\.css$/
-        }, {
             loaders: ["react-hot", "babel-loader"],
             test: /\.jsx?$/,
             exclude: /node_modules/
