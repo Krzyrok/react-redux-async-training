@@ -20,7 +20,7 @@ for code structure because of project size - this is only playground, so it shou
 Used: <br />
 1) ESLint and recommended rules <br />
 2) Webpack (extracted "libs/vendor" chunk in configuration) with webpack-dev-server and react-hot-loader from gaearon <br />
-3) Babel with ES6 and react presets and babel-polyfill <br />
+3) Babel with ES6 and react presets <br />
 4) React <br />
 5) Redux with react-redux and middlewares (redux-thunk, redux-logger)<br />
 <br />
@@ -28,7 +28,7 @@ Used: <br />
 
 <h2>debugging</h2>
 For debugging: <br />
-1) change devtool property in webpack.config.js (from 'eval' to the e.g. 'source-map') <br />
-2) open browser devtools console - all actions are logged thank to redux-logger (configureStore.js) <br />
+1) change devtool property in webpack.config.js (from "eval" to the e.g. "source-map") <br />
+2) open browser devtools console - all actions are logged thanks to the redux-logger (it is used in configureStore.js) <br />
 3) install Redux DevTools (e.g. as Chrome extension: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd ) <br />
 <br />
