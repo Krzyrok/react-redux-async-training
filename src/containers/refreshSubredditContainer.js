@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import RefreshSubreddit from "../components/refreshSubreddit.js";
-import { invalidateSubreddit, fetchPostsIfNeeded} from "../actions/actions.js";
+import { invalidateSubreddit } from "../actions/subredditActions.js";
+import { fetchPostsIfNeeded } from "../actions/postsActions.js";
 
 function mapStateToProps(state) {
     const { selectedSubreddit, postsBySubreddit } = state;

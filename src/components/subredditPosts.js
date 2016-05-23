@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from "react";
-import { fetchPostsIfNeeded } from "../actions/actions.js";
+import { fetchPostsIfNeeded } from "../actions/postsActions.js";
 import PickerContainer from "../containers/pickerContainer.js";
 import LastUpdateInfoContainer from "../containers/lastUpdateInfoContainer.js";
 import RefreshSubredditContainer from "../containers/refreshSubredditContainer.js";
