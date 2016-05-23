@@ -11,13 +11,6 @@ class AsyncApp extends Component {
         dispatch(fetchPostsIfNeeded(selectedSubreddit));
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.selectedSubreddit !== this.props.selectedSubreddit) {
-            const { selectedSubreddit, dispatch } = nextProps;
-            dispatch(fetchPostsIfNeeded(selectedSubreddit));
-        }
-    }
-
     render() {
         return (
             <div>
