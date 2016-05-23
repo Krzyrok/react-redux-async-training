@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from "react";
-import { fetchPostsIfNeeded } from "./actions.js";
-import PickerContainer from "./pickerContainer.js";
-import LastUpdateInfoContainer from "./lastUpdateInfoContainer.js";
-import RefreshSubredditContainer from "./refreshSubredditContainer.js";
-import PostsContainer from "./postsContainer.js";
+import { fetchPostsIfNeeded } from "../actions/actions.js";
+import PickerContainer from "../containers/pickerContainer.js";
+import LastUpdateInfoContainer from "../containers/lastUpdateInfoContainer.js";
+import RefreshSubredditContainer from "../containers/refreshSubredditContainer.js";
+import PostsContainer from "../containers/postsContainer.js";
 
 class AsyncApp extends Component {
     componentDidMount() {

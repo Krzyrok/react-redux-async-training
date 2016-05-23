@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import Picker from "./picker.js";
-import { selectSubreddit, fetchPostsIfNeeded } from "./actions.js";
+import Picker from "../components/picker.js";
+import { selectSubreddit, fetchPostsIfNeeded } from "../actions/actions.js";
 
 function mapStateToProps(state) {
     return {

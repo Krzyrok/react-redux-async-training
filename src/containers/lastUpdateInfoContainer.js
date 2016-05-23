@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import LastUpdateInfo from "./lastUpdateInfo.js";
+import LastUpdateInfo from "../components/lastUpdateInfo.js";
 
 function mapStateToProps(state) {
     const { selectedSubreddit, postsBySubreddit } = state;

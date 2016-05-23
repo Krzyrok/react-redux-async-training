@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Posts from "./posts.js";
+import Posts from "../components/posts.js";
 
 function mapStateToProps(state) {
     const { selectedSubreddit, postsBySubreddit } = state;

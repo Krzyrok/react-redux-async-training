@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import AsyncApp from "./asyncApp.js";
+import SubredditPosts from "../components/subredditPosts.js";
 
 function mapStateToProps(state) {
     return {
@@ -7,4 +7,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(AsyncApp);
+export default connect(mapStateToProps)(SubredditPosts);
