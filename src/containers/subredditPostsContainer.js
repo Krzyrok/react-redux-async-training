@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import SubredditPosts from "../components/subredditPosts.js";
+import { fetchPostsIfNeeded } from "../actions/postsActions.js";
 
 function mapStateToProps(state) {
     return {
@@ -7,4 +8,12 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(SubredditPosts);
+function mapDispatchToProps(dispatch) {
+    return {
+        onInitialize: selectedSubreddit => {
+            dispatch(fetchPostsIfNeeded(selectedSubreddit));
+        }
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SubredditPosts);
