@@ -14,7 +14,7 @@ export default function postsBySubreddit(state = {}, action) {
         return state;
     }
 }
-//
+
 function posts(state = {
     isFetching: false,
     didInvalidate: false,
