@@ -4,7 +4,7 @@ const callAPIMiddleware = ({ dispatch, getState}) => next => action => {
         callAPI,
         shouldCallAPI = () => true,
         actionProperties = {},
-        customSuccessActionCreator
+        successActionCreator
     } = action;
 
     if (!types) {
@@ -42,8 +42,8 @@ const callAPIMiddleware = ({ dispatch, getState}) => next => action => {
                 error
             })
         ).then(json => {
-            if (typeof customSuccessActionCreator === "function") {
-                return dispatch(customSuccessActionCreator(json));
+            if (typeof successActionCreator === "function") {
+                return dispatch(successActionCreator(json));
             }
 
             return dispatch({

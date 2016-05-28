@@ -10,7 +10,7 @@ export function fetchPostsIfNeeded(subreddit) {
         callAPI: () => fetch(`http://www.reddit.com/r/${subreddit}.json`),
         shouldCallAPI: state => shouldFetchPosts(state, subreddit),
         actionProperties: { subreddit },
-        customSuccessActionCreator: json => receivePosts(json, subreddit)
+        successActionCreator: json => receivePosts(json, subreddit)
     };
 }
 
