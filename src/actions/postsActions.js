@@ -1,4 +1,5 @@
 import fetch from "isomorphic-fetch";
+import createActionCreator from "./createActionCreator.js";
 
 export const REQUEST_POSTS = "REQUEST_POSTS";
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
@@ -31,12 +32,7 @@ function fetchPosts(subreddit) {
     };
 }
 
-function requestPosts(subreddit) {
-    return {
-        type: REQUEST_POSTS,
-        subreddit
-    };
-}
+const requestPosts = createActionCreator(REQUEST_POSTS, "subreddit");
 
 function receivePosts(subreddit, json) {
     return {
