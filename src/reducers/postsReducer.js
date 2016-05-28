@@ -20,8 +20,8 @@ const posts = createReducer({
     didInvalidate: false,
     items: []
 }, {
-    [INVALIDATE_SUBREDDIT]: (state) => ({ ...state, didInvalidate: true }),
-    [REQUEST_POSTS]: (state) => ({ ...state, isFetching: true, didInvalidate: false }),
+    [INVALIDATE_SUBREDDIT]: state => ({ ...state, didInvalidate: true }),
+    [REQUEST_POSTS]: state => ({ ...state, isFetching: true, didInvalidate: false }),
     [RECEIVE_POSTS]: (state, action) => ({
         ...state,
         isFetching: false,
