@@ -11,7 +11,7 @@ To start run:
     <li>npm install</li>
     <li>npm start</li>
 </ol>
-<br /><br />
+<br />
 
 <h2>code structure</h2>
 I applied "rails-style" (separate folders for "actions", "reducers", "containers", and "components")
@@ -27,7 +27,7 @@ Used:
     <li>React </li>
     <li>Redux with react-redux and middlewares (redux-thunk, redux-logger)</li>
 </ol>
-<br /><br />
+<br />
 
 
 <h2>debugging</h2>
@@ -37,7 +37,7 @@ For debugging:
     <li>open browser devtools console - all actions are logged thanks to the redux-logger (it is used in configureStore.js) </li>
     <li>install Redux DevTools (e.g. as Chrome extension: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd ) </li>
 </ol>
-<br /><br />
+<br />
 
 <h2>advanced</h2>
 There are branches with additional stuff: <br />
@@ -62,4 +62,4 @@ There are branches with additional stuff: <br />
         </ul>
     </li>
 </ol>
-<br /><br />
+<br />
