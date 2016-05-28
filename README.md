@@ -6,7 +6,7 @@ To better understand the project, read firstly redux documentation: http://redux
 
 
 <h2>start</h2>
-To start run: 
+To start run:
 <ol>
     <li>npm install</li>
     <li>npm start</li>
@@ -23,7 +23,7 @@ Used:
 <ol>
     <li>ESLint and recommended rules</li>
     <li>Webpack (extracted "libs/vendor" chunk in configuration) with webpack-dev-server and react-hot-loader from gaearon </li>
-    <li>Babel with ES6 and react presets </li>
+    <li>Babel with ES6 and react presets and transform-object-rest-spread plugin </li>
     <li>React </li>
     <li>Redux with react-redux and middlewares (redux-thunk, redux-logger)</li>
 </ol>
@@ -45,7 +45,7 @@ There are branches with additional stuff: <br />
     <li>reducing-boilerplate - branch created to test scenarios from redux documentation http://redux.js.org/docs/recipes/ReducingBoilerplate.html <br />
         <ul>
             <li>
-                actions/createActionCreator.js - function for creating simple/dump actions. 
+                actions/createActionCreator.js - function for creating simple/dump actions.
                 <br/> Example of usage in actions/subredditActions.js
             </li>
             <li>
