@@ -51,7 +51,7 @@ There are branches with additional stuff: <br />
             <li>
                 middlewares/callAPIMiddleware.js - middleware created for generic actions during fetching data/calling API. It takes only objects which have 'types' property (instead of 'type').
                 <br/> Mandatory properties: types (array of 3 strings), callAPI (function)
-                <br/> Optional properties: shouldCallAPI (function), payload (object), customSuccessActionCreator (function)
+                <br/> Optional properties: shouldCallAPI (function), actionProperties (object), customSuccessActionCreator (function)
                 <br/> Example of usage in actions/postsActions.js (fetchPostsIfNeeded function)
             </li>
         </ul>
