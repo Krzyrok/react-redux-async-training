@@ -54,6 +54,10 @@ There are branches with additional stuff: <br />
                 <br/> Optional properties: shouldCallAPI (function), actionProperties (object), successActionCreator (function)
                 <br/> Example of usage in actions/postsActions.js (fetchPostsIfNeeded function)
             </li>
+            <li>
+                reducers/createReducer.js - helper for creating reducers (without 'switch' statement and 'default case'). It was implemented only for practicing. I suggest avoid it (defining pure functions with 'switch' statement are more readable in my opinion).
+                <br/> Example of usage in reducers/postsReducer.js and reducers/subredditReducer.js
+            </li>
         </ul>
     </li>
 </ol>
