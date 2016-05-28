@@ -1,10 +1,8 @@
 import { SELECT_SUBREDDIT } from "../actions/subredditActions.js";
+import createReducer from "./createReducer.js";
 
-export default function selectedSubreddit(state = "reactjs", action) {
-    switch (action.type) {
-    case SELECT_SUBREDDIT:
-        return action.subreddit;
-    default:
-        return state;
-    }
-}
+const selectedSubreddit = createReducer("reactjs", {
+    [SELECT_SUBREDDIT]: (state, action) => action.subreddit
+});
+
+export default selectedSubreddit;

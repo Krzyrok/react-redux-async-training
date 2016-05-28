@@ -1,43 +1,32 @@
 import { REQUEST_POSTS, RECEIVE_POSTS } from "../actions/postsActions.js";
 import { INVALIDATE_SUBREDDIT } from "../actions/subredditActions.js";
+import createReducer from "./createReducer.js";
 
-export default function postsBySubreddit(state = {}, action) {
-    switch (action.type) {
-    case INVALIDATE_SUBREDDIT:
-    case REQUEST_POSTS:
-    case RECEIVE_POSTS:
-        return {
-            ...state,
-            [action.subreddit]: posts(state[action.subreddit], action)
-        };
-    default:
-        return state;
-    }
-}
+const postsBySubreddit = createReducer({}, {
+    [INVALIDATE_SUBREDDIT]: (state, action) => updatePostsForSubreddit(state, action),
+    [REQUEST_POSTS]: (state, action) => updatePostsForSubreddit(state, action),
+    [RECEIVE_POSTS]: (state, action) => updatePostsForSubreddit(state, action)
+});
 
-function posts(state = {
+export default postsBySubreddit;
+
+const updatePostsForSubreddit = (state, action) => ({
+    ...state,
+    [action.subreddit]: posts(state[action.subreddit], action)
+});
+
+const posts = createReducer({
     isFetching: false,
     didInvalidate: false,
     items: []
-}, action) {
-    switch (action.type) {
-    case INVALIDATE_SUBREDDIT:
-        return {
-            ...state, didInvalidate: true
-        };
-    case REQUEST_POSTS:
-        return {
-            ...state, isFetching: true, didInvalidate: false
-        };
-    case RECEIVE_POSTS:
-        return {
-            ...state,
-            isFetching: false,
-            didInvalidate: false,
-            items: action.posts,
-            lastUpdated: action.receivedAt
-        };
-    default:
-        return state;
-    }
-}
+}, {
+    [INVALIDATE_SUBREDDIT]: (state) => ({ ...state, didInvalidate: true }),
+    [REQUEST_POSTS]: (state) => ({ ...state, isFetching: true, didInvalidate: false }),
+    [RECEIVE_POSTS]: (state, action) => ({
+        ...state,
+        isFetching: false,
+        didInvalidate: false,
+        items: action.posts,
+        lastUpdated: action.receivedAt
+    })
+});
