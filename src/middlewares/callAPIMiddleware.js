@@ -3,7 +3,7 @@ const callAPIMiddleware = ({ dispatch, getState}) => next => action => {
         types,
         callAPI,
         shouldCallAPI = () => true,
-        payload = {},
+        actionProperties = {},
         customSuccessActionCreator
     } = action;
 
@@ -29,7 +29,7 @@ const callAPIMiddleware = ({ dispatch, getState}) => next => action => {
     const [ requestActionType, successActionType, failureActionType ] = types;
 
     dispatch({
-        ...payload,
+        ...actionProperties,
         type: requestActionType
     });
 
@@ -37,7 +37,7 @@ const callAPIMiddleware = ({ dispatch, getState}) => next => action => {
         .then(
             response => response.json(),
             error => dispatch({
-                ...payload,
+                ...actionProperties,
                 type: failureActionType,
                 error
             })
@@ -47,7 +47,7 @@ const callAPIMiddleware = ({ dispatch, getState}) => next => action => {
             }
 
             return dispatch({
-                ...payload,
+                ...actionProperties,
                 type: successActionType,
                 response: json
             });

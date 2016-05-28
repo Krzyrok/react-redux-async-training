@@ -9,7 +9,7 @@ export function fetchPostsIfNeeded(subreddit) {
         types: [ REQUEST_POSTS, RECEIVE_POSTS, RECEIVE_POSTS_FAILURE ],
         callAPI: () => fetch(`http://www.reddit.com/r/${subreddit}.json`),
         shouldCallAPI: state => shouldFetchPosts(state, subreddit),
-        payload: { subreddit },
+        actionProperties: { subreddit },
         customSuccessActionCreator: json => receivePosts(json, subreddit)
     };
 }
