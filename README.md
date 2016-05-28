@@ -11,12 +11,12 @@ To start run:
     <li>npm install</li>
     <li>npm start</li>
 </ol>
-
+<br /><br />
 
 <h2>code structure</h2>
 I applied "rails-style" (separate folders for "actions", "reducers", "containers", and "components")
 for code structure because of project size - this is only playground, so it shouldn't grow. It can be used as "starter pack". In case of extending this project (or creating new one based on this) it is recommended to split files by "domain": http://marmelab.com/blog/2015/12/17/react-directory-structure.html
-
+<br /><br />
 
 <h2>technology stack</h2>
 Used:
@@ -27,7 +27,7 @@ Used:
     <li>React </li>
     <li>Redux with react-redux and middlewares (redux-thunk, redux-logger)</li>
 </ol>
-
+<br /><br />
 
 
 <h2>debugging</h2>
@@ -37,7 +37,7 @@ For debugging:
     <li>open browser devtools console - all actions are logged thanks to the redux-logger (it is used in configureStore.js) </li>
     <li>install Redux DevTools (e.g. as Chrome extension: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd ) </li>
 </ol>
-
+<br /><br />
 
 <h2>advanced</h2>
 There are branches with additional stuff: <br />
@@ -62,3 +62,4 @@ There are branches with additional stuff: <br />
         </ul>
     </li>
 </ol>
+<br /><br />
