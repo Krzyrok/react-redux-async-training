@@ -1,19 +1,34 @@
+import React, { Component, PropTypes } from "react";
 import { connect } from "react-redux";
-import SubredditPosts from "../components/subredditPosts.js";
 import { fetchPostsIfNeeded } from "../actions/postsActions.js";
+import PickerContainer from "../containers/pickerContainer.js";
+import LastUpdateInfoContainer from "../containers/lastUpdateInfoContainer.js";
+import RefreshSubredditContainer from "../containers/refreshSubredditContainer.js";
+import PostsContainer from "../containers/postsContainer.js";
 
-function mapStateToProps(state) {
-    return {
-        selectedSubreddit: state.selectedSubreddit
-    };
+class SubredditPosts extends Component {
+    componentDidMount() {
+        const { dispatch, selectedSubreddit } = this.props;
+        dispatch(fetchPostsIfNeeded(selectedSubreddit));
+    }
+
+    render() {
+        return (
+            <div>
+                <PickerContainer />
+                <LastUpdateInfoContainer />
+                <RefreshSubredditContainer />
+                <PostsContainer />
+            </div>
+        );
+    }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        onInitialize: selectedSubreddit => {
-            dispatch(fetchPostsIfNeeded(selectedSubreddit));
-        }
-    };
-}
+SubredditPosts.propTypes = {
+    selectedSubreddit: PropTypes.string.isRequired,
+    dispatch: PropTypes.func.isRequired
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(SubredditPosts);
+export default connect(state => ({
+    selectedSubreddit: state.selectedSubreddit
+}))(SubredditPosts);
