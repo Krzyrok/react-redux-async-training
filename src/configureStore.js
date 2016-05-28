@@ -6,7 +6,7 @@ import rootReducer from "./reducers/index.js";
 const loggerMiddleware = createLogger();
 
 export default function configureStore(initialState) {
-    return createStore(
+    const store = createStore(
         rootReducer,
         initialState,
         compose(
@@ -14,4 +14,13 @@ export default function configureStore(initialState) {
             window.devToolsExtension ? window.devToolsExtension() : f => f
         )
     );
+
+    if (module.hot) {
+        module.hot.accept("./reducers", () => {
+            const nextRootReducer = require("./reducers/index.js").default;
+            store.replaceReducer(nextRootReducer);
+        });
+    }
+
+    return store;
 }
