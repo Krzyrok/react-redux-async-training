@@ -37,7 +37,7 @@ For debugging:
     <li>open browser devtools console - all actions are logged thanks to the redux-logger (it is used in configureStore.js) </li>
     <li>install Redux DevTools (e.g. as Chrome extension: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd ) </li>
 </ol>
-<br />
+<br/>
 
 <h2>advanced</h2>
 There are branches with additional stuff: <br />
