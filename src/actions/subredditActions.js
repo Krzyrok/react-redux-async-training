@@ -1,4 +1,4 @@
-import createActionCreator from "./actionCreator.js";
+import createActionCreator from "./createActionCreator.js";
 
 export const SELECT_SUBREDDIT = "SELECT_SUBREDDIT";
 export const INVALIDATE_SUBREDDIT = "INVALIDATE_SUBREDDIT";
