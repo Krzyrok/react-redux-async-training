@@ -49,14 +49,9 @@ There are branches with additional stuff: <br />
                 <br/> Example of usage in actions/subredditActions.js
             </li>
             <li>
-                middlewares/callAPIMiddleware.js - middleware created for generic actions during fetching data/calling API. It takes objects which have 'types' property (instead of 'type'). If 'types' is not defined, then next middleware will be invoked. 
-                <br/> <b>Mandatory properties:</b> 
-                <br/> types: array of 3 strings, types for actions - for request, success and failure
-                <br/> callAPI: function for calling API
-                <br/> <b>Optional properties</b>:
-                <br/> shouldCallAPI: function which returns true if callAPI should be invoked; (state) => bool
-                <br/> payload: object with additional properties which will be passed to the created actions
-                <br/> customSuccessActionCreator: function for creating custom action for success (if default one is not sufficient enough); (json) => action
+                middlewares/callAPIMiddleware.js - middleware created for generic actions during fetching data/calling API. It takes only objects which have 'types' property (instead of 'type').
+                <br/> Mandatory properties: types (array of 3 strings), callAPI (function)
+                <br/> Optional properties: shouldCallAPI (function), payload (object), customSuccessActionCreator (function)
                 <br/> Example of usage in actions/postsActions.js (fetchPostsIfNeeded function)
             </li>
         </ul>
