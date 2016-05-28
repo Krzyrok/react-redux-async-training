@@ -49,8 +49,7 @@ const callAPIMiddleware = ({ dispatch, getState}) => next => action => {
             return dispatch({
                 ...payload,
                 type: successActionType,
-                response: json,
-                receivedAt: Date.now()
+                response: json
             });
         });
 };
